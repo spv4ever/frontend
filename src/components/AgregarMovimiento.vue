@@ -33,7 +33,7 @@
   </template>
   
   <script>
-  import axios from '../axios';
+  import apiClient from '../apiClient';
   
   export default {
     data() {
@@ -51,7 +51,7 @@
       async agregarMovimiento() {
         try {
           const token = localStorage.getItem('token');
-          const response = await axios.post('/comunidades/movimientos', {
+          const response = await apiClient.post('/comunidades/movimientos', {
             fecha: this.fecha,
             concepto: this.concepto,
             importe: this.importe,

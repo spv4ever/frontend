@@ -17,7 +17,7 @@
   </template>
   
   <script>
-  import axios from '../axios';
+  import apiClient from '../apiClient';
   
   export default {
     data() {
@@ -34,7 +34,7 @@
           return;
         }
   
-        const response = await axios.get('/comunidades/balance', {
+        const response = await apiClient.get('/comunidades/balance', {
           headers: { Authorization: `Bearer ${token}` }
         });
         this.balance = response.data;

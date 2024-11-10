@@ -12,7 +12,7 @@
   </template>
   
   <script>
-  import axios from '../axios';
+  import apiClient from '../apiClient';
   
   export default {
     data() {
@@ -26,7 +26,7 @@
     methods: {
       async register() {
         try {
-          const response = await axios.post('/registro', {
+          const response = await apiClient.post('/registro', {
             nombre: this.nombre,
             nombreUsuario: this.nombreUsuario,
             contraseña: this.contraseña

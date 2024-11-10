@@ -10,7 +10,7 @@
   </template>
   
   <script>
-  import axios from '../axios';
+  import apiClient from '../apiClient';
   
   export default {
     data() {
@@ -20,7 +20,7 @@
     },
     async created() {
       try {
-        const response = await axios.get('/comunidades'); // Llama a la API para obtener comunidades
+        const response = await apiClient.get('/comunidades'); // Llama a la API para obtener comunidades
         console.log("Datos recibidos:", response.data); // Verifica los datos recibidos en la consola
         this.comunidades = response.data; // Guarda los datos en la variable
       } catch (error) {

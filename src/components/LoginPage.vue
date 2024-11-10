@@ -11,7 +11,7 @@
   </template>
   
   <script>
-  import axios from '../axios';
+  import apiClient from '../apiClient';
   
   export default {
     data() {
@@ -24,7 +24,7 @@
     methods: {
       async login() {
         try {
-          const response = await axios.post('/login', {
+          const response = await apiClient.post('/login', {
             nombreUsuario: this.nombreUsuario,
             contraseña: this.contraseña
           });

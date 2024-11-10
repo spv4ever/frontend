@@ -39,7 +39,7 @@
 
   
   <script>
-  import axios from '../axios';
+  import apiClient from '../apiClient';
 
 export default {
   data() {
@@ -64,7 +64,7 @@ export default {
           return;
         }
 
-        const response = await axios.get('/comunidades/movimientos', {
+        const response = await apiClient.get('/comunidades/movimientos', {
           headers: { Authorization: `Bearer ${token}` }
         });
         this.movimientos = response.data;
@@ -80,7 +80,7 @@ export default {
           return;
         }
 
-        const response = await axios.get('/comunidades/movimientos', {
+        const response = await apiClient.get('/comunidades/movimientos', {
           headers: { Authorization: `Bearer ${token}` },
           params: {
             fechaInicio: this.fechaInicio,

@@ -6,11 +6,13 @@ import BalanceCuenta from '../components/BalanceCuenta.vue';
 import AgregarMovimiento from '../components/AgregarMovimiento.vue';
 
 const routes = [
+  { path: '/', redirect: '/login' }, // Redirige la raíz a /login o a cualquier otra ruta
   { path: '/agregar-movimiento', component: AgregarMovimiento },
   { path: '/registro', component: RegisterPage },
   { path: '/login', component: LoginPage },
   { path: '/movimientos', component: MovimientosCuenta },
-  { path: '/balance', component: BalanceCuenta }
+  { path: '/balance', component: BalanceCuenta },
+  { path: '/:catchAll(.*)', redirect: '/login' } // Redirige cualquier ruta no encontrada a /login
 ];
 
 const router = createRouter({
